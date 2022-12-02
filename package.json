@@ -1,0 +1,52 @@
+{
+  "name": "parcel_template",
+  "version": "1.0.0",
+  "license": "MIT",
+  "source": "src/views/pages/index.pug",
+  "browserslist": "> 0.5%, last 2 versions, not dead",
+  "main": "unrelated.js",
+  "targets": {
+    "main": false
+  },
+  "scripts": {
+    "dev": "rimraf dist && parcel --port 3000 --open",
+    "build": "rimraf dist && parcel build src/views/pages/*.pug --public-url . --no-source-maps"
+  },
+  "parcel-namer-struct": [
+    {
+      "type": [
+        "scss",
+        "css"
+      ],
+      "dest": "/styles/"
+    },
+    {
+      "type": [
+        "js"
+      ],
+      "dest": "/scripts/"
+    },
+    {
+      "type": [
+        "jpeg",
+        "jpg",
+        "png"
+      ],
+      "dest": "/assets/images/"
+    },
+    {
+      "type": [
+        "svg"
+      ],
+      "dest": "/assets/icons/"
+    }
+  ],
+  "devDependencies": {
+    "@parcel/transformer-pug": "2.8.0",
+    "@parcel/transformer-sass": "^2.8.0",
+    "parcel": "^2.8.0",
+    "parcel-namer-struct": "^1.0.0",
+    "posthtml-beautify": "^0.7.0",
+    "rimraf": "^3.0.2"
+  }
+}
